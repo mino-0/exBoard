@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+
 @SpringBootTest
 public class BoardServiceTests {
     @Autowired
@@ -44,7 +45,18 @@ public class BoardServiceTests {
 
     @Test
     public void testRemove() {
-        Long bno = 100L;
+        Long bno = 50L;
+
         boardService.removeWithReplies(bno);
+    }
+
+    @Test
+    public void testModify() {
+        BoardDTO boardDTO = BoardDTO.builder()
+                .bno(2L)
+                .title("제목변경")
+                .content("내용변경")
+                .build();
+        boardService.modify(boardDTO);
     }
 }
