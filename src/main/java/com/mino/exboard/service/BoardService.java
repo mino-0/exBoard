@@ -6,6 +6,7 @@ import com.mino.exboard.dto.PageRequestDTO;
 import com.mino.exboard.dto.PageResultDTO;
 import com.mino.exboard.entity.Board;
 import com.mino.exboard.entity.Member;
+import org.springframework.stereotype.Service;
 
 public interface BoardService {
     Long register(BoardDTO dto);
